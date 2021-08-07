@@ -9,15 +9,11 @@ $user->require_login();?>
       $page = 'dashboard';
 ?>
 <?php include('includes/header.php') ?>
-<style>
-  table{
-    border: 1px solid #ccc;
-  }
-</style>
-<section>
-  <div class="container">
+
+<section style="padding: 0">
+  <!-- <div class="container"> -->
     <h1 class="ui-title-1" style="font-size: 28px"> <?php echo $lang['dashboard'] ?> </h1>
-  </div>
+  <!-- </div> -->
 </section>
 <!-- <section id="info" style="padding: 30px 0;"></section> -->
 <?php
@@ -26,7 +22,8 @@ if($result = $conn->query($sql)){
                     $rowsCount = $result->num_rows;
                     echo "<div class='uk-text-primary'>Всього записів: ". $rowsCount ."</div>";
 ?>
-<table style="font-size: 0.9em">
+<table class="uk-table uk-table-striped" style="font-size: 0.9em">
+<thead>
   <tr>
     <th>Ім'я та прізвище</th>
     <th>Контакти</th>
@@ -36,6 +33,8 @@ if($result = $conn->query($sql)){
     <th>Час реєстрації</th>
     <th>Видалити</th>
   </tr>
+</thead>
+<tbody>
 <?php
                     $counter = 0;
                         foreach($result as $row){
@@ -68,7 +67,8 @@ if($result = $conn->query($sql)){
                 }
                 $conn->close();
                 ?>
-    </table>
+</tbody>  
+</table>
 
 
  <?php include('includes/footer.php') ?>
