@@ -15,10 +15,11 @@
         $total = $_POST['total'];
         $event_id = $_POST['event_id'];
         $event_list = $_POST['event_list'];
-        
+        $payment=0;
+
         date_default_timezone_set('Europe/Kiev');
         $date_time = date('Y-m-d H:i:s');
-        $sql = "INSERT INTO users (f_name, l_name, email, phone, event_list, event_id, total, date_time) VALUES ('$firstname','$lastname', '$email','$phone', '$event_list', '$event_id','$total',  '$date_time')";
+        $sql = "INSERT INTO users (f_name, l_name, email, phone, event_list, event_id, total, payment, date_time) VALUES ('$firstname','$lastname', '$email','$phone', '$event_list', '$event_id','$total', '$payment', '$date_time')";
          if($conn->query($sql)){
             echo "New user was created!";
         } else{

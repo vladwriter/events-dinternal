@@ -1,10 +1,4 @@
 <?php
-/**
- * WCMS - WEX Simple CMS
- * https://github.com/vedees/wcms
- * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
- * https://github.com/vedees/wcms/blob/master/LICENSE
- */
 require 'core/initialize.php';
 require 'core/FileFinder.php';
 $user = new wcms\classes\auth\Login;
